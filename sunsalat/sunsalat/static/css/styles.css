@@ -1,0 +1,195 @@
+
+
+  body{
+  max-width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  margin: 0;
+  }
+ .container{
+  text-align: center;
+  margin-top: 50px;
+ 
+ }
+
+  h1 {
+    color: #444;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  h2 {
+    color: #444;
+    margin-bottom: 50px;
+  }
+  
+  button[type="submit"].check-in {
+    background-color: green;
+    display: inline;
+    border-radius: 5px;
+    padding: 5% 20%;
+    margin-top: 80px;
+    cursor: pointer;
+    display:inline-block;
+    width: 50%;
+  }
+
+  button[type="submit"].check-out {
+    background-color: rgba(210, 15, 15, 0.856);  
+    display: inline;
+    border-radius: 5px;
+    padding: 5% 20%;
+    margin-top: 50px;
+    cursor: pointer;
+    display:inline-block;
+    width: 50%;
+  }
+  
+  button[type="submit"].check-in:hover {
+    background-color: rgba(6, 149, 6, 0.787);
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  button[type="submit"].check-out:hover {
+    background-color: rgba(255, 0, 0, 0.8);  
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #999;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+
+.card:hover{
+  cursor: pointer;
+  background-color:#aeacac71 ;
+}
+
+.card-pl{
+  width: 10px;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.card-pl:hover{
+  background-color: #a09f9f8a; 
+}
+
+.card-text{
+  color: #444;
+  text-decoration: none !important;
+}
+
+/* report pages*/
+
+.report-heading {
+  text-align: center;
+}
+
+#form-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+#form {
+  display: flex;
+  align-items: center;
+ 
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.form-group {
+  margin-right: 10px;
+}
+
+.p1 {
+  padding-left: 20px ;
+}
+
+#pline_table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(108,117,125);
+ 
+}
+
+#pline_table th, #pline_table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#pline_table th {
+  color:white ;
+ 
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2;
+
+}
+
+input[type="submit"]{
+  margin-bottom: 16px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+input[type="date"]{
+ border-style: solid;
+ color: #444;
+ margin-top: 50px;
+
+}
+
+.p2{
+  margin-bottom: 12px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+
+.bullets {
+  list-style-type: none;
+  padding:10px;
+  color: #fff;
+}
+
+.nav-log {
+  list-style-type: none;
+  padding:10px;
+  color: #444 ;
+ 
+}
+a.nav-link{
+  text-decoration: white;
+}
+
+.card-img-top{
+  margin-bottom: 10px;
+}

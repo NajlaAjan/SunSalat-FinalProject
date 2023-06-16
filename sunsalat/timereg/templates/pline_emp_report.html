@@ -1,0 +1,61 @@
+{% extends "template.html" %}
+{% block content %}
+    <h1> Production Line / Employee Report</h1>
+  
+
+    <form id="form" method="POST">
+      {% csrf_token %}
+      <div class= "p1"><p>Date: <input type="date" id="startdate"></p></div>
+      <div class= "p1"><p>Date: <input type="date" id="enddate"></p></div>
+      <div class= "p2"><p>Production Line: <input type="text" id="pline"></p></div>
+      <input type="submit" id="submit">
+    </form>
+
+    <table id='pline_table'>
+       <thead>
+          <tr>
+              <th scope="col">Employee</th>
+                <th scope="col">Time spent</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+    $('#form').on('submit', function (e) {
+        var bodyRef = document.getElementById('pline_table').getElementsByTagName('tbody')[0];
+        bodyRef.innerHTML = '';
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'pline_emp_report' %}",
+            data: {
+                startdate: $('#startdate').val(),
+                enddate: $('#enddate').val(),
+                pline: $('#pline').val(),
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                dataType: "json",
+
+            },
+            success: function (data) {
+                console.log(data);
+                $('body').removeClass('busy');
+                $('submit').prop('disabled', false);
+                var pline_table = document.getElementById('pline_table').getElementsByTagName('tbody')[0];
+                for (i in data.msg) {
+                var tr = pline_table.appendChild(document.createElement('tr'));
+                var td = tr.appendChild(document.createElement('td'));
+                td.innerHTML = String(data.msg[i]['user']);
+                var td = tr.appendChild(document.createElement('td'));
+                td.innerHTML = String(data.msg[i]['total_timespent']);
+                }         
+            },
+            failure: function () {
+                console.log(error);
+
+            }
+        });
+    });
+    </script>
+{% endblock %}

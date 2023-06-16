@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block content %}    
+    <div class="container">
+        {% if user.is_authenticated %}
+        {% if request %}
+        <div class="alert alert-primary" role="alert">
+          Hi {{ user.get_username }}, {{ request.session.message  }}
+          </div>
+        {% endif %}
+        {% endif %}
+        <h1>Production Line {{ pline }} </h1>
+        <form action="/timereg/worktime/checkin/{{ pline }}/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary btn-lg btn-block" style="width: 100%; margin: 10px; margin-top: 50px; padding:30px">Check In </button>        
+        </form>
+        <form action="/timereg/worktime/checkout/{{ pline }}/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-secondary btn-lg btn-block" style="width: 100%; margin: 10px; padding:30px">Check Out  </button>
+        </form>
+    </div>
+    <script>
+    window.setTimeout(function() {
+        window.location.href = '/timereg/worktime/{{ pline }}';
+    }, 5000);
+    </script>
+{% endblock %}
+  

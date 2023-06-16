@@ -1,0 +1,27 @@
+{% extends "template.html" %}
+{% block content %}
+
+        <!--- Production line overview for employee page-->  
+        <div>
+            <h1>Production Line</h1>
+            <div class="center">
+            <div class="row">
+                <p>Select a production line</p>
+                {% for productionline in production_lines %}   
+                         
+                    <div class="card-pl"> 
+                        <div class="card-body">   
+                            <a href = "/timereg/worktime/{{ productionline.id }}/"> 
+                            <p class="card-text">Production line: {{ productionline.productionline_name }}</p>
+                            </a>
+                        </div>
+                    </div>  
+                
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+                

@@ -1,0 +1,9 @@
+{% extends "template.html" %}
+{% load static %} 
+{% block content %}  
+<script src="{% static 'chartkick/Chart.bundle.js' %}"></script>
+<script src="{% static 'chartkick/chartkick.js' %}"></script>
+{{ result }}
+<h1> Time spent per production line the past 24 hours (in minutes)</h1>
+{{ chart }}
+{% endblock %}

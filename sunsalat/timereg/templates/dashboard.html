@@ -1,0 +1,48 @@
+{% extends 'template.html' %}
+{% block content %}
+
+
+<div class="row">
+  
+  <div class="card" style="width: 18rem; margin: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) ">
+    <div class="card-body">
+      <img class="card-img-top" src="/static/phours1.png" alt="Card image cap" >
+      <h5 class="card-title">Production Line Report</h5>
+      <p class="card-text">This report shows actual time spent vs estimated time per production line.</p>
+      <a href={% url 'prod_line_report' %} class="stretched-link"></a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; margin: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
+    <div class="card-body">
+      <img class="card-img-top" src="/static/pline1.png" alt="Card image cap" >
+      <h5 class="card-title">Employee Report</h5>
+      <p class="card-text">This report shows actual time spent per employee for all or a specific production line</p>
+      <a href={% url 'pline_emp_report' %} class="stretched-link"></a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; margin: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
+    <div class="card-body">
+      <img class="card-img-top" src="/static/emp.png" alt="Card image cap" >
+      <h5 class="card-title">Work hours per Employee</h5>
+      <p class="card-text">This report shows work hours per employee for a given period.</p>
+      <a href={% url 'emp_report' %} class="stretched-link"></a>      
+    </div>
+  </div>
+
+
+  <div class="card" style="width: 18rem; margin: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
+    <div class="card-body">
+      <img class="card-img-top" src="/static/chart1.png" alt="Card image cap" >
+      <h5 class="card-title">Charts</h5>
+      <p class="card-text">This report shows charts for production time for the past 24 hours.</p>
+      <a href={% url 'charts' %} class="stretched-link"></a>
+      
+    </div>
+  </div>
+
+ 
+
+
+{% endblock %}
